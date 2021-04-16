@@ -19,24 +19,23 @@ public class PlayerAnimation : MonoBehaviour
         _renderer = GetComponent<SpriteRenderer>();
     }
 
-    void Start()
-    {
-        
-    }
-
    
     void Update()
     {
-        if (player.action == playersAction.Walk)
+        switch (player.action)
         {
-            Animation(_walkSprites);
-        } else
-        {
-            if(_currentFrame>=_standSprites.Length-1)
-            {
-                _currentFrame = 0;
-            }
-            Animation(_standSprites);
+            case playersAction.Stand:
+                if (_currentFrame >= 4)
+                {
+                    _currentFrame = 0;
+                }
+                Animation(_standSprites);
+                break;
+            case playersAction.Walk:
+                Animation(_walkSprites);
+                break;
+            default:
+                break;
         }
     }
 
