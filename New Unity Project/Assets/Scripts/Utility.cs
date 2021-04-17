@@ -1,19 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Перечисление всех действий игрока
 /// </summary>
-public enum playersAction
+public enum PlayersAction
 {
     Stand,
     Walk,
 }
 
-
-
 public class Utility : MonoBehaviour
 {
-   
 }
